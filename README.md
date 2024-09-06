@@ -92,8 +92,6 @@ exports['screenshot-basic']:requestClientScreenshot(GetPlayers()[1], {
 end)
 ```
 
-```
-
 #### requestClientVideo(player: string | number, options: any, cb: (err: string | boolean, data: string) => void)
 Requests the specified client to record a video.
 
