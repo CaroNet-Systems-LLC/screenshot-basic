@@ -6,6 +6,8 @@ screenshot-basic is a basic resource for making screenshots of clients' game ren
 WebGL/OpenGL ES calls as used by the `application/x-cfx-game-view` plugin (see the code in [citizenfx/fivem](https://github.com/citizenfx/fivem/blob/b0a7cda1007dc53d2ba0f638c035c0a5d1402796/data/client/bin/d3d_rendering.cc#L248)),
 and wraps these calls using Three.js to 'simplify' WebGL initialization and copying to a buffer from asynchronous NUI.
 
+This Fork is Dedicated to adding functionality necessary for the Operation of CaroNet Systems Products, but can also be used by other resources openly. Open a feature request if one is ever wanted. Thank you! - Hogan (.gg/caronetsystems)
+
 ## Usage
 
 1. Make sure your [cfx-server-data](https://github.com/citizenfx/cfx-server-data) is updated as of 2019-01-15 or later. You can easily
@@ -84,6 +86,32 @@ Example:
 ```lua
 exports['screenshot-basic']:requestClientScreenshot(GetPlayers()[1], {
     fileName = 'cache/screenshot.jpg'
+}, function(err, data)
+    print('err', err)
+    print('data', data)
+end)
+```
+
+```
+
+#### requestClientVideo(player: string | number, options: any, cb: (err: string | boolean, data: string) => void)
+Requests the specified client to record a video.
+
+Arguments:
+* **player**: The target player's player index.
+* **options**: An object containing options.
+  * **fileName**: string? - The file name on the server to save the video to. If not passed, the callback will get a data URI for the video data.
+  * **encoding**: 'webm' | 'mp4' - The target image encoding. Defaults to 'webm'.
+  * **duration**: int? - The duration of the video recording (in ms). Defaults to 1000ms.
+* **cb**: A callback upon result.
+  * **err**: `false`, or an error string.
+  * **data**: The local file name the upload was saved to, or the data URI for the image.
+
+
+Example:
+```lua
+exports['screenshot-basic']:requestClientVideo(GetPlayers()[1], {
+    fileName = 'cache/screenshot.webm'
 }, function(err, data)
     print('err', err)
     print('data', data)
