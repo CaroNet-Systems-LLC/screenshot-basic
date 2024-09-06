@@ -8,6 +8,8 @@ and wraps these calls using Three.js to 'simplify' WebGL initialization and copy
 
 This Fork is Dedicated to adding functionality necessary for the Operation of CaroNet Systems Products, but can also be used by other resources openly. Open a feature request if one is ever wanted. Thank you! - Hogan (.gg/caronetsystems)
 
+Features Added: Ability to Record Player Screens (Thanks to [spoty123](https://github.com/spoty123) with the [Pull Request](https://github.com/citizenfx/screenshot-basic/commit/09ed39aefab12d67959395a34bddbd11b059935f) on the Original Screenshot-Basic)
+
 ## Usage
 
 1. Make sure your [cfx-server-data](https://github.com/citizenfx/cfx-server-data) is updated as of 2019-01-15 or later. You can easily
@@ -16,7 +18,7 @@ This Fork is Dedicated to adding functionality necessary for the Operation of Ca
    ```
    mkdir -p 'resources/[local]/'
    cd 'resources/[local]'
-   git clone https://github.com/citizenfx/screenshot-basic.git screenshot-basic
+   git clone https://github.com/CaroNet-Systems-LLC/screenshot-basic.git screenshot-basic
    ```
 3. Make/use a resource that uses it. Currently, there are no directly-usable commands, it is only usable through exports.
 
